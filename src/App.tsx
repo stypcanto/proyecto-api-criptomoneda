@@ -5,11 +5,12 @@ import { useEffect, useState } from "react"
 
 function App() {
 
+const API_URL = import.meta.env.VITE_API_URL
 
-  const [criptos, setCriptos] = useState() //El [] es porque no peude empezar vacio
+  const [criptos, setCriptos] = useState([]) //El [] es porque no peude empezar vacio
 
   useEffect(() => {
-    fetch("https://api.coincap.io/v2/assets")
+    fetch(`${API_URL}assets`)
       // fecth y catch es una promesa
       .then((resp) => resp.json()) //La respuesta que me ha llegado debe correr en el tipo JSON
         .then((data) => {
@@ -29,8 +30,8 @@ if (!criptos) return <>
     <>
       <h1>Lista de Criptomonedas</h1>
       <ol>
-        {criptos.map(({ name, priceUsd }) => (
-          <li>Nombre: {name} Precio:{priceUsd}</li>
+        {criptos.map(({ id, name, priceUsd }) => (
+          <li key={id}> Nombre: {name} Precio:{priceUsd}</li>
         ))
         }
       </ol>
