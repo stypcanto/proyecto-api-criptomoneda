@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-
-
+import axios from "axios"
+import './App.css'
 
 
 function App() {
@@ -9,13 +9,14 @@ const API_URL = import.meta.env.VITE_API_URL
 
   const [criptos, setCriptos] = useState([]) //El [] es porque no peude empezar vacio
 
+  //axios hace ya conversion de respuesta a JSON, con axios se reemplaza a fecth
   useEffect(() => {
-    fetch(`${API_URL}assets`)
+    axios.get(`${API_URL}assets`)
       // fecth y catch es una promesa
-      .then((resp) => resp.json()) //La respuesta que me ha llegado debe correr en el tipo JSON
+     // .then((resp) => resp.json()) //La respuesta que me ha llegado debe correr en el tipo JSON
         .then((data) => {
-          //console.log(data)) //La data que me ha llegado debe ser impresa en la consola
-          setCriptos(data.data)
+          console.log(data) //La data que me ha llegado debe ser impresa en la consola
+          setCriptos(data.data.data)
         })
         .catch(() => {
           console.error("La petición no se pudo completar")
