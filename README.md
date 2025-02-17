@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
+# Proyecto: Lista de Criptomonedas con React y Axios
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto muestra una lista de criptomonedas obtenida mediante una API. Se utilizan tecnologías modernas como React, Axios y variables de entorno.
 
-Currently, two official plugins are available:
+## 📂 Estructura de commits:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🟡 Commit: Haciendo peticiones en react de las criptomonedas (0ac56ba)
+- Se realizó la primera integración para obtener criptomonedas mediante peticiones en React.
+- Se creó el archivo `README.md` para documentar el proyecto.
 
-## Expanding the ESLint configuration
+### 🟢 Commit: Usando variables de entorno y Keys (d7120e3)
+- Se añadieron variables de entorno para almacenar la URL de la API.
+- Se configuró el archivo `.env` para proteger las claves sensibles.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 🟠 Commit: Creando la lista de criptomonedas y añadiendo Axios (7cd710c)
+- Se implementó Axios para gestionar las peticiones HTTP de forma más eficiente.
+- Se creó el archivo de estilos `Cripto.css`.
+- Se añadió un componente para mostrar la lista de criptomonedas.
 
-- Configure the top-level `parserOptions` property like this:
+### 🟢 Commit: Añadiendo estilos dinámicos para variaciones (127d641)
+- Se agregaron estilos dinámicos en `Cripto.css` para diferenciar la variación positiva y negativa en 24 horas.
+- Se mejoró la interfaz para hacerla más amigable y legible.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🚀 Tecnologías Utilizadas:
+- **React**: Framework para construir la interfaz.
+- **Axios**: Librería para realizar peticiones HTTP.
+- **CSS**: Estilización de componentes.
+- **Variables de entorno**: Para proteger las claves sensibles.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 📜 Cómo Ejecutar el Proyecto:
+1. Clonar el repositorio.
+2. Crear un archivo `.env` con la URL de la API:
+   ```env
+   VITE_API_URL=https://api.example.com/
+   ```
+3. Instalar dependencias:
+   ```bash
+   npm install
+   ```
+4. Ejecutar el proyecto:
+   ```bash
+   npm run dev
+   ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## 💡 Notas:
+- Este proyecto permite visualizar las criptomonedas en tiempo real.
+- Las variaciones en el precio se muestran con colores (verde para positivo y rojo para negativo).
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+---
+Desarrollado por: **Styp Canto** (styp611@outlook.com)
+
