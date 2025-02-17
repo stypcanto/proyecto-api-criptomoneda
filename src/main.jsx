@@ -9,7 +9,7 @@ import App from "./components/App";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <>
+  
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App/>} >
@@ -17,8 +17,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                  <Route path='saludo'element={<Saludo />}/>
               
         </Route>
-                  <Route path='*' element={<Pagina404 />}/>
+        <Route path='*' element={<Pagina404 />}/>
       </Routes>
     </BrowserRouter>
-  </>
+  
 );
