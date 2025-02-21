@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 const Cripto = ({ id, name, priceUsd, symbol, changePercent24Hr }) => {
     return (
+<div className="cripto">
+        <Link to={ `/criptomonedas/${id}` }>Ver detalles</Link>
 
-        <Link to={ `/criptomonedas/${id}` }>
 
-
-            <div className="cripto">
+            
                 <h2> { name } </h2>
                 <div className="info">
                     <p> <span className="label">Precio: </span> { parseFloat(priceUsd).toFixed(4) }</p>
@@ -20,11 +20,12 @@ const Cripto = ({ id, name, priceUsd, symbol, changePercent24Hr }) => {
                         </span>
 
                     </p>
-                </div>
 
+                </div>
+               
             </div>
 
-        </Link>
+        
 
 
     )
