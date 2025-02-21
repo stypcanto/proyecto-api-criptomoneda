@@ -10,7 +10,7 @@ const Menu = () => {
           <NavLink to='/'>Inicio</NavLink>
         </li>
         <li>
-          <NavLink to='/saludo'>Saludo</NavLink>
+          <NavLink to='/criptomonedas'>Lista de criptos</NavLink>
         </li>
       </ul>
     </nav>
