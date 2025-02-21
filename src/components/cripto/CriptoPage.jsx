@@ -46,18 +46,22 @@ const CriptoPage = () => {
 
                 </thead>
                 <tbody>
-                    {
-                        history.map(({ date, priceUsd, time }) => {
-                            const timestamp = dayjs(date).isValid() ? dayjs(date) : dayjs(time * 1000); // ✅ Manejo de `date` y `time`
-                            return (
-                                <tr key={time}>
-                                    <td>{timestamp.format("DD/MM/YYYY")}</td>
-                                    <td>{priceUsd ? parseFloat(priceUsd).toFixed(4) : "N/A"}</td> {/* ✅ Evita mostrar `undefined` */}
-                                </tr>
-                            );
-                        })
-                    }
+                    { history.map(({ date, priceUsd, time }) => {
+                        console.log("Fecha recibida:", date); // 🔍 Verifica qué formato tiene la fecha
+                        const formattedDate = dayjs(date).isValid()
+                            ? dayjs(date).format("DD/MM/YYYY")
+                            : "Fecha inválida";
+
+                        return (
+                            <tr key={ time }>
+                                <td>{ formattedDate }</td>
+                                <td>{ parseFloat(priceUsd).toFixed(4) }</td>
+                            </tr>
+                        );
+                    }) }
                 </tbody>
+
+
 
 
 
